@@ -20,8 +20,6 @@ const headers = {
 app.get('/shops', async (req, res) => {
   let shopsOnly = 
     await axios.get(baseURL + `vendors?q[service]=true`, { headers });
-  
-  console.log(shopsOnly)
-  
-  res.json(shopsOnly)
+    
+  res.send(shopsOnly.data)
 })

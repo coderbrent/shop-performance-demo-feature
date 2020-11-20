@@ -8,7 +8,7 @@ const averages = {
 }
 
 function App() {
-  const [shops, setShops] = useState();
+  const [shops, setShops] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:5000/shops`)
@@ -18,7 +18,9 @@ function App() {
 
   return (
     <div className="App bg-gray-100">
-
+      { shops.map(el => (
+        <ShopPerformanceCard shopName={el.name} averages={averages} letterGrade={'A'}/>
+      ))}
       <ShopPerformanceCard averages={averages} shopName="Seifert's Automotive" letterGrade="A" />
       <ShopPerformanceCard averages={averages} shopName="Eli's Garage" letterGrade="C" />
       <ShopPerformanceCard averages={averages} shopName="Milltown Mechanics" letterGrade="F" />
