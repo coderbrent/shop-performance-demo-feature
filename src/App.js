@@ -17,7 +17,7 @@ function App() {
   }, [])
 
   return (
-    <div className="App h-100 flex flex-row flex-wrap justify-evenly bg-gray-100">
+    <div className="App flex flex-row flex-wrap justify-evenly bg-gray-100">
       { shops.map(el => (
         <ShopPerformanceCard
           key={el.id}
