@@ -10,7 +10,10 @@ As a fleet manager for a business that outsources their maintenance and repair w
 - It can help you shed poorly performing shops (makes “breaking up” easier to do when you can show them the performance gap).
 
 #How does it help Fleetio?:
-I’m assuming a large portion of Fleetio's client base are small fleets (10 - 30 units). Generally, smaller outfits tend to outsource their maintenance and repair work to local shops and chains. That makes this feature attractive to the majority of existing Fleetio customers. Furthermore, a feature like this would be very attractive to potential customers, making it a strong selling point to add to the already wide array of features that make Fleetio such an incredible piece of software.
+
+- I’m assuming a large portion of Fleetio's client base are small fleets (10 - 30 units). Generally, smaller outfits tend to outsource their maintenance and repair work to local shops and chains. That makes this feature attractive to the majority of existing Fleetio customers. 
+
+- A feature like this would be very attractive to potential customers, making it a strong selling point to add to the already wide array of features that make Fleetio such an incredible piece of software.
 
 #KPIs:
 I've identified some KPIs for *vendor service shops*. This type of vendor (in Fleetio) performs work on site (as opposed to fueling only/parts only). These are your Tire shops, Transmission shops, general mechanic shops, etc.
