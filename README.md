@@ -1,7 +1,7 @@
-#Shop Performance Feature (Demo - Fleetio)
-Built with React, Tailwind, Node, Express
+<h1>Shop Performance Feature (Demo - Fleetio)</h1>
+<b>Built with React, Tailwind, Node, Express</b>
 
-#Objective:
+<h3>Objective:</h3>
 
 As a fleet manager for a business that outsources their maintenance and repair work to more than one shop, you’ll often find yourself simply guessing when it comes to how well your vendors are performing for you. By leveraging some existing Fleetio data and combining it with some new data points, we are able to gain some valuable insight into these partnerships. Why is it important to know how well your shops are performing?
  
@@ -9,13 +9,13 @@ As a fleet manager for a business that outsources their maintenance and repair w
 - It can promote an increase in overall fleet uptime by delegating jobs more effectively to better shops.
 - It can help you shed poorly performing shops (makes “breaking up” easier to do when you can show them the performance gap).
 
-#How does it help Fleetio?:
+<h3>How does it help Fleetio?:</h3>
 
 - I’m assuming a large portion of Fleetio's client base are small fleets (10 - 30 units). Generally, smaller outfits tend to outsource their maintenance and repair work to local shops and chains. That makes this feature attractive to the majority of existing Fleetio customers. 
 
 - A feature like this would be very attractive to potential customers, making it a strong selling point to add to the already wide array of features that make Fleetio such an incredible piece of software.
 
-#KPIs:
+<h3>KPIs</h3>
 I've identified some KPIs for *vendor service shops*. This type of vendor (in Fleetio) performs work on site (as opposed to fueling only/parts only). These are your Tire shops, Transmission shops, general mechanic shops, etc.
 
 - Efficiency - A service vendor's efficiency can either make or break a fleet based business. That is why it's such an important metric to follow. Many fleet managers will compare one shop to another, ie. "Joe's Auto Body always seems to get us back on the road faster than the local Maaco". Personally,I believe this to be a poor way to judge a shops efficiency. I think a more accurate way is to compare a shops actual time vs. book time performance on a job by job basis. That will be the metric this demo focuses on.
