@@ -7,26 +7,64 @@ const averages = {
   issues: '2.57 a month'
 }
 
+const grader = grade => {
+  switch(grade) {
+    case grade > 20: return 'F';
+  }
+}
+
 function App() {
-  const [shops, setShops] = useState([]);
+  const [score, setScore] = useState([]);
+  const [vendors, setVendors] = useState([]);
+
+  const getShopPerformanceCard = shopID => {
+    fetch(`http://localhost:5000/get_vendor_performance/${shopID}`)
+      .then(res => res.json())
+      .then(data => setScore([data]))
+  };
+
+  try {
+    const po = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        console.log('Server Timing', entry.serverTiming);
+      }
+    });
+    po.observe({ 
+      type: 'navigation', 
+      buffered: true 
+    });
+  } catch (e) {
+  //blah
+  };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/shops`)
-      .then(response => response.json())
-      .then(data => setShops(data))
-  }, [])
+    fetch(`http://localhost:5000/all_vendors`)
+      .then(res => res.json())
+      .then(data => setVendors(data))
+  },[]);
 
   return (
-    <div className="App flex flex-row flex-wrap justify-evenly bg-gray-100">
-      { shops.map(el => (
+    <>
+    <div className="App flex flex-col flex-wrap justify-center bg-gray-100">
+      { score ? score.map(el => (
         <ShopPerformanceCard
           key={el.id}
-          shopName={el.name} 
+          shopName={el.name}
           averages={averages}
-          letterGrade={'A'} 
+          letterGrade={grader(el.average)}
         />
-      ))}
+      )) : null }
+    <select onChange={e => getShopPerformanceCard(e.target.value)}>
+        { vendors.map(shop => (
+          <option 
+            value={shop.id} 
+            key={shop.id}>
+              {shop.name}
+          </option>
+        ))}
+    </select>
     </div>
+    </>
   );
 }
 
