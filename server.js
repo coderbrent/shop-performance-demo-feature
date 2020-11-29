@@ -54,7 +54,6 @@ app.get('/vendor_hours/:id', async (req, res) => {
     })
     .catch(error => console.error(error));
 
-  //we use the placeID to create a places detail search...
   let googlePlacesDetails = `/details/json?place_id=${placeID}&fields=name,opening_hours&key=${process.env.GOOGLE_API_KEY}`;
   
   //we store the returned schedule...
@@ -66,7 +65,7 @@ app.get('/vendor_hours/:id', async (req, res) => {
         return res.status(400).send('No hours were found via google places search for this vendor.')
       } else {
         let hours = response.data.result.opening_hours.periods;
-        //converted the response schedule to something easier to use here
+        //converted the response schedule to something easier to use here..
         vendorScheduleData['name'] = name;
         vendorScheduleData['id'] = id;
         
@@ -92,7 +91,6 @@ app.get('/vendor_hours/:id', async (req, res) => {
     }, { headers }).then(response => res.json(response.data))
     .catch(error => console.error(error));
 
-//Put the following in the README.md -> take this out of the code...
 //This data is obviously not perfect because it is ultimately on the shop to maintain it (update a GMB with accurate hours (or at all)).
 //I do typically try to steer away from making design decisions where core functionality rests on the whims of shopkeepers! lol.
 //I implemented this anyway for the following reasons:
@@ -104,7 +102,7 @@ app.get('/vendor_hours/:id', async (req, res) => {
 //to be overridden or otherwise ignored by the user in the event they either do not wish to keep up with tracking or make too many innaccurate entries.
 });
 
-const timeTrim = num => num.replace(/[0]/g, '')
+const timeTrim = num => num.replace(/[0]/g, '');
 
 app.get('/calculate_hours/:service_id', async (req, res) => {
   let service = await 
@@ -170,9 +168,6 @@ app.get('/calculate_hours/:service_id', async (req, res) => {
   let efficiencyRateOfJob = 
     Math.floor((bookHours / (actualWorkHours.hours * totalDownTime.days)) * 100);
 
-  //I'll once again leverage the custom_fields feature here to store this data for us to use in the final route for
-  //the grading feature!
-
   axios
     .patch(`${baseURL}service_entries/${service.id}`, {
       custom_fields: {
@@ -224,19 +219,3 @@ app.get('/all_vendors', async (req, res) => {
 
       res.json(vendors);
 });
-
-app.post('/new_service_entry/:vehicle_id/:vendor_id/:start_date/:completed_date/:book_hours', (req, res) => { 
-  const service_entry = {
-    started_at: req.params.start_date,
-    completed_at: req.params.completed_date, //yyyy-mm-dd
-    vehicle_id: req.params.vehicle_id,
-    vendor_id: req.params.vendor_id,
-    custom_fields: { shop_efficiency_rate: req.params.book_hours },
-    reference: 'dummy data for demo'
-  };
-
-    axios
-      .post(`${baseURL}service_entries`, service_entry, { headers })
-      .then(response => res.json(response))
-      .catch(error => console.error(error));
-})
