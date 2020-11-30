@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import ShopPerformanceCard from './Components/Card';
+import ShopPerformanceCard from './Components/ShopPerformanceCard';
+import { grader } from './utils/grader';
 
 const averages = {
   down_time: '10 days',
   repair_cost: '$250',
   issues: '2.57 a month'
-}
-
-const grader = grade => {
-  switch(grade) {
-    case grade > 20: return 'F';
-  }
 }
 
 function App() {
