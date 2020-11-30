@@ -13,7 +13,7 @@ function App() {
   const [vendors, setVendors] = useState([]);
 
   const getShopPerformanceCard = shopID => {
-    fetch(`https://fleetio-demo-api.herokuapp.com/get_vendor_performance/${shopID}`, { mode: 'no-cors'})
+    fetch(`https://fleetio-demo-api.herokuapp.com/get_vendor_performance/${shopID}`)
       .then(res => res.json())
       .then(data => setScore([data]))
   };
@@ -33,9 +33,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch(`https://fleetio-demo-api.herokuapp.com/all_vendors`, { 
-      mode: 'no-cors'
-    })
+    fetch(`https://fleetio-demo-api.herokuapp.com/all_vendors`)
       .then(res => res.json())
       .then(data => setVendors(data))
   },[]);
