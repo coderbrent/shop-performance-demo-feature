@@ -4,10 +4,10 @@ export const Docs = () => {
   return (
     <section className="container mx-auto px-4">
     <div className="mt-4 mb-2">
-      <h1 className="text-3xl">Hi, Senthil!</h1>
+      <h1 className="text-3xl font-black">Hi, Senthil!</h1>
       <p className="mt-4 mb-2 font-light">Thank you so much for taking a moment to check out this small feature/widget I put together.
         The reason I did this for our call was to really drive home how my background as a fleet manager
-        makes me a compelling engineering candidate for Fleetio.
+        makes me a compelling engineering candidate for Fleetio. I'd love to take a few minutes to walk you through the code if we have time during our call today!
       </p>
       <h1 className="text-xl font-bold">About the feature</h1>
       <p className="mt-2 font-light">
@@ -31,9 +31,12 @@ export const Docs = () => {
         <li><b>Book Hours:</b> The service entries manufacturers suggested book time (manually input dummy data for now, but it looks like the Motor Driven API has manufacturer suggested book times)</li>
         <li><b>Actual Time Repair Took:</b> The total time (less the non-workable off hours) that the shop had the vehicle in service</li>
       </div>
-      <p className="mt-4 font-light">To see the feature in action, select Firestone Complete Auto Care from the dropdown below.</p>
-      <p>The Letter Grade is calculated over three repairs</p>
+      <p className="mt-4 font-light">
+        The Letter Grade on the component is calculated on three repairs sourced from my Fleetio trial account. The book hours(service entries) and shop hours(vendors) data are stored as custom fields on there respective entities.
+      </p>
+      <p className="mt-4 font-light">To see the feature in action, select "Firestone Complete Auto Care" from the dropdown below.</p>
     </div>
+    <p className="mt-4 font-light"><p className="font-black">NOTE:</p> Due to the time it took to seed the dummy data, I only pre-populated Firestone for the purposes of this demo. All data is live and sourced from my Fleetio trial account.</p>
     </section>
   )
 };
