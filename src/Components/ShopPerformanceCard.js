@@ -15,7 +15,7 @@ const ShopPerformanceCard = ({ shopName, letterGrade, averages }) => {
           <span className="text-base font-semibold">Shop Report Card</span>
           <span className="text-base">{shopName}</span>
           <a 
-            href="https://localhost:3000" 
+            href="https://fleetio-demo.herokuapp.com"
             className="text-sm text-blue-400"
           >
             Details >
@@ -28,15 +28,15 @@ const ShopPerformanceCard = ({ shopName, letterGrade, averages }) => {
               {letterGrade}
           </div>
           <div className="w-full flex items-center justify-between">
-            <span className="font-semibold">Avg. repair cost</span>
+            <span className="font-semibold">Avg. repair cost (not implemented)</span>
             <span className="font-semibold">{averages.repair_cost}</span>
           </div>
           <div className="w-full flex items-center justify-between">
-            <span className="font-semibold">Avg. downtime</span>
+            <span className="font-semibold">Avg. downtime (not implemented)</span>
             <span className="font-semibold">{averages.down_time}</span>
           </div>
           <div className="w-full flex items-center justify-between">
-            <span className="font-semibold">Avg. issues</span>
+            <span className="font-semibold">Avg. issue rate (not implemented)</span>
             <span className="font-semibold">{averages.issues}</span>
           </div>
         </div>

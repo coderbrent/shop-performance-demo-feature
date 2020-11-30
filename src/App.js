@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ShopPerformanceCard from './Components/ShopPerformanceCard';
+import { Docs } from './Components/Docs';
 import { grader } from './utils/grader';
 
 const averages = {
@@ -39,16 +40,10 @@ function App() {
   },[]);
 
   return (
-    <>
-    <div className="App flex flex-col flex-wrap justify-center bg-gray-100">
-      { score ? score.map(el => (
-        <ShopPerformanceCard
-          key={el.id}
-          shopName={el.name}
-          averages={averages}
-          letterGrade={grader(el.average)}
-        />
-      )) : null }
+    <>    
+    <div className="App flex flex-col flex-wrap items-center justify-center bg-gray-100">
+    <Docs />
+    <div className="container auto-mx">
     <select onChange={e => getShopPerformanceCard(e.target.value)}>
         { vendors.map(shop => (
           <option 
@@ -58,6 +53,15 @@ function App() {
           </option>
         ))}
     </select>
+    </div>
+    { score ? score.map(el => (
+        <ShopPerformanceCard
+          key={el.id}
+          shopName={el.name}
+          averages={averages}
+          letterGrade={grader(el.average)}
+        />
+      )) : null }
     </div>
     </>
   );
