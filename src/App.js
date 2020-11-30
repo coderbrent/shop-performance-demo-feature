@@ -33,7 +33,9 @@ function App() {
   };
 
   useEffect(() => {
-    fetch(`https://fleetio-demo-api.herokuapp.com/all_vendors`, { mode: 'no-cors'})
+    fetch(`https://fleetio-demo-api.herokuapp.com/all_vendors`, { 
+      mode: 'no-cors'
+    })
       .then(res => res.json())
       .then(data => setVendors(data))
   },[]);
