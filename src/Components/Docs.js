@@ -13,12 +13,13 @@ export const Docs = () => {
       <p className="mt-2 font-light">
         After brainstorming on a few ideas, I decided on a "Vendor Report Card" feature. The criteria for my
         decision to do this was:
+      </p>
       <div className="mt-4 mb-2 ml-4">
         <li>Not already implemented in Fleetio</li>
         <li>Something I personally would have loved to see as a fleet manager</li>
         <li>Fit in with the rest of the Fleetio UI</li>
       </div>
-      </p>
+     
     </div>
     <div className="mt-4 mb-2">
       <h1 className="text-xl font-bold">How it works</h1>
