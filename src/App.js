@@ -26,7 +26,7 @@ function App() {
       }
     });
     po.observe({ 
-      type: 'navigation', 
+      type: 'navigate', 
       buffered: true 
     });
   } catch (e) {
@@ -34,7 +34,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch(`https://fleetio-demo-api.herokuapp.com/all_vendors`)
+    fetch(`http://localhost:3000/vendors/all.json`)
       .then(res => res.json())
       .then(data => setVendors(data))
   },[]);
