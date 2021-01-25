@@ -19,20 +19,6 @@ function App() {
       .then(data => setScore([data]))
   };
 
-  try {
-    const po = new PerformanceObserver((list) => {
-      for (const entry of list.getEntries()) {
-        console.log('Server Timing', entry.serverTiming);
-      }
-    });
-    po.observe({ 
-      type: 'navigate', 
-      buffered: true 
-    });
-  } catch (e) {
-  //blah
-  };
-
   useEffect(() => {
     fetch(`http://localhost:3000/vendors/all.json`)
       .then(res => res.json())
